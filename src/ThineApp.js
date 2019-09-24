@@ -12,6 +12,10 @@ class ThineApp extends Component {
         ]
     }
 
+    deleteAll = () => {
+        this.setState({ todos: [] });
+    }
+
     deleteTodo = (id) =>{
         const delItem = this.state.todos.filter(item => {
             return (
@@ -37,6 +41,7 @@ class ThineApp extends Component {
     render(){
         return(
             <div className="container"><h3>My app</h3>
+            <button onClick={this.deleteAll}>Delete</button>
             <Todos myTodo={this.state.todos} deleteItem={this.deleteTodo}/>
             <AddTodo newTodo={this.addItem} />
             </div>

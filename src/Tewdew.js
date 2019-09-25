@@ -23,6 +23,7 @@ const Todos = ({myTodo, deleteItem}) => {
     return (
         <div>
             {todoList}
+         
         </div>
     )
 }

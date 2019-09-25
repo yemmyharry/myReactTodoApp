@@ -24,7 +24,11 @@ class ThineApp extends Component {
         
     }
 
-   
+   deleteAllTodo = () => {
+       this.setState({
+           todos: []
+       })
+   }
 
     addItem = (theNewItem) => {
         theNewItem.id = Math.random() 
@@ -36,9 +40,11 @@ class ThineApp extends Component {
 
     render(){
         return(
-            <div className="container"><h3>My app</h3>
-            <Todos myTodo={this.state.todos} deleteItem={this.deleteTodo}/>
+            <div className="container"><h3>My Todo app</h3>
+            <Todos myTodo={this.state.todos} deleteItem={this.deleteTodo} deleteAllTodo={this.deleteAllTodo}/>
+            <button onClick={this.deleteAllTodo}>Delete All</button>
             <AddTodo newTodo={this.addItem} />
+            
             </div>
 
         )
